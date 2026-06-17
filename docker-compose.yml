@@ -1,0 +1,26 @@
+services:
+  # ── Offline: partidas solo infinitas + rotação de conquistas ──────────────
+  offline:
+    build: .
+    container_name: 7a0-offline
+    restart: unless-stopped
+    env_file: .env
+    command: ["python", "play.py", "-g", "0", "-t", "3", "--focus", "achievements"]
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+
+  # ── Online: salas WebSocket infinitas, 3 threads simultâneas ─────────────
+  online:
+    build: .
+    container_name: 7a0-online
+    restart: unless-stopped
+    env_file: .env
+    command: ["python", "online_loop.py", "-t", "3"]
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M

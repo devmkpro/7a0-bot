@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Credentials
+.env
+
+# Results (gerados em runtime)
+7a0_results_*.json
+7a0_history.db
+7a0_history.db-wal
+7a0_history.db-shm
+
+# Logs
+*.log
+ghost_*.txt
+ghost_*.log
+
+# IDE / Tools
+.claude/
+.codebrain/
+.codex/
+.gemini/
+.mcp.json
+%SystemDrive%/
+
+# OS
+.DS_Store
+Thumbs.db
+.claude/*
+.codebrain/*
+.codex/*
+.gemini/*
+.mcp.json

@@ -1,0 +1,16 @@
+.env
+.git
+.claude
+.codebrain
+.codex
+.gemini
+.mcp.json
+__pycache__
+*.pyc
+*.log
+7a0_history.db
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
