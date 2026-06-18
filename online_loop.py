@@ -22,11 +22,13 @@ import time
 from pathlib import Path
 
 # ── .env loader ──────────────────────────────────────────────────────────────
-for line in Path('.env').read_text(encoding='utf-8').splitlines():
-    line = line.strip()
-    if '=' in line and not line.startswith('#'):
-        k, _, v = line.partition('=')
-        os.environ.setdefault(k.strip(), v.strip())
+_env_path = Path('.env')
+if _env_path.exists():
+    for line in _env_path.read_text(encoding='utf-8').splitlines():
+        line = line.strip()
+        if '=' in line and not line.startswith('#'):
+            k, _, v = line.partition('=')
+            os.environ.setdefault(k.strip(), v.strip())
 
 from a7a0_bot.online import run_online_room
 from a7a0_bot.game import log
